@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+#tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.tile {
+    width: 10%;
+    height: 10%;
+    background-color: grey;
+}
+
+.menu-container {
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    right: 10px;
+}
+
+.blur>.tile:hover {
+    /* border: 1px solid red; */
+    filter: blur(20px);
+}
+
+.shadow>.tile {
+    filter: drop-shadow(5px 5px 5px rgb(88, 78, 78));
+}
+
+.shadows>.tile:hover {
+    /* border: 1px solid blue; */
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .5));
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
