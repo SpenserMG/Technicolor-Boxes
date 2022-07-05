@@ -2,27 +2,32 @@ body {
     background-color: black;
     margin: 0px;
     padding: 0px;
+    width: 200vw;
+    height: 200vh;
 }
 
 #tile-container {
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
+    width: 200vw;
 }
 
 .tile {
-    width: 10%;
-    height: 10%;
+    width: 10vw;
+    height: 10vw;
     background-color: grey;
+    transition: .5s;
 }
 
 .menu-container {
     position: absolute;
-    background-color: white;
-    width: 100px;
-    height: 100px;
+    background-color: black;
+    width: 150px;
+    height: 150px;
     top: 10px;
     right: 10px;
+    border-radius: 10px;
 }
 
 .blur>.tile:hover {
@@ -39,12 +44,22 @@ body {
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .5));
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+.glow>.tile::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #ffee10;
+    transition: .5s;
+    z-index: -1;
+}
 
-    100% {
-        transform: rotate(360deg);
-    }
+.glow>.tile:hover::before {
+    box-shadow: 0 0 15px 3px#ffee10;
+}
+
+.glow>.tile:hover {
+    color: #ffee10;
+    box-shadow: 0 0 5px 3px #ffee10;
+    text-shadow: 0 0 5px #ffee10;
+    transform: scale(1.1);
 }

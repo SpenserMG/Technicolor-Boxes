@@ -47,7 +47,12 @@ var options = {
     "shadow": {
         displayString: "Shadow",
         func: shadowTiles
-    }
+    },
+
+    "glow": {
+        displayString: "Glow",
+        func: glowTiles
+    },
 }
 
 function populateMenu() {
@@ -69,16 +74,21 @@ function populateMenu() {
 
 populateMenu();
 
-// function blurTiles()
-// {
-//     // console.log("I'm the hello function");
-//     var tileC = document.getElementById("tile-container");
-//     tileC.className = "blur";
-// }
-
 function shadowTiles() {
     // console.log("I'm the hi function");
     var tileC = document.getElementById("tile-container");
     tileC.className = "shadow";
 
 }
+
+function glowTiles() {
+    var tileC = document.getElementById("tile-container");
+    tileC.className = "glow";
+}
+
+// function blurTiles()
+// {
+//     // console.log("I'm the hello function");
+//     var tileC = document.getElementById("tile-container");
+//     tileC.className = "blur";
+// }
